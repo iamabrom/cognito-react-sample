@@ -1,0 +1,56 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.container {
+  min-width: 18em;
+  max-width: 35em;
+  padding-left: 8em;
+  padding-right: 8em;
+  padding-bottom: 4em;
+  border: 1px solid #636363;
+  border-radius: 10px
+}
+
+.smallButton {
+  font-size: 0.8em;
+}
+
+.inputText {
+  font-size: 1.3em;
+  width: 70%
+}
+
+button {
+  margin: 0.5em;
+}
+
+h1 {
+  font-size: 2.75em;
+  line-height: 1.1;
+}
+
+h2 {
+  font-size: 2em;
+  line-height: 1.1;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+a:hover {
+  color: #535bf2;
+}
+
+.celebrate {
+  font-size: 6em;
+}
