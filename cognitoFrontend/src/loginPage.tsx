@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { signIn, signUp } from './authService';
 
@@ -9,23 +9,27 @@ const LoginPage = () => {
   const [isSignUp, setIsSignUp] = useState(false);
   const navigate = useNavigate();
 
-  const handleSignIn = async (e) => {
+  const handleSignIn = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     try {
       const session = await signIn(email, password);
       console.log('Sign in successful', session);
-      sessionStorage.setItem('accessToken', session.AccessToken);
-      if (sessionStorage.getItem('accessToken')) {
-        window.location.href = '/home';
+      if (session && typeof session.AccessToken !== 'undefined') {
+        sessionStorage.setItem('accessToken', session.AccessToken);
+        if (sessionStorage.getItem('accessToken')) {
+          window.location.href = '/home';
+        } else {
+          console.error('Session token was not set properly.');
+        }
       } else {
-        console.error('Session token was not set properly.');
+        console.error('SignIn session or AccessToken is undefined.');
       }
     } catch (error) {
       alert(`Sign in failed: ${error}`);
     }
-  };
+};
 
-  const handleSignUp = async (e) => {
+  const handleSignUp = async (e: { preventDefault: () => void; }) => {
     e.preventDefault();
     if (password !== confirmPassword) {
       alert('Passwords do not match');

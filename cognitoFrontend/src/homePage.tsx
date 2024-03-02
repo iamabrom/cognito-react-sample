@@ -1,4 +1,4 @@
-import React from 'react';
+// import React from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const HomePage = () => {
@@ -12,7 +12,6 @@ const HomePage = () => {
   return (
     <div className="container">
       <h1>Amazon Cognito<br />Sample App</h1>
-      <br></br>
       <br></br>
       <h2>Hello World!</h2>
       <p className="celebrate">&#127881;</p>

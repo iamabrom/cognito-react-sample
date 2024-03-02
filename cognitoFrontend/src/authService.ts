@@ -15,12 +15,13 @@ export const signIn = async (username: string, password: string) => {
     },
   };
   try {
+    // @ts-ignore
     const command = new InitiateAuthCommand(params);
     const { AuthenticationResult } = await cognitoClient.send(command);
     if (AuthenticationResult) {
-      sessionStorage.setItem("idToken", AuthenticationResult.IdToken);
-      sessionStorage.setItem("accessToken", AuthenticationResult.AccessToken);
-      sessionStorage.setItem("refreshToken", AuthenticationResult.RefreshToken);
+      sessionStorage.setItem("idToken", AuthenticationResult.IdToken || '');
+      sessionStorage.setItem("accessToken", AuthenticationResult.AccessToken || '');
+      sessionStorage.setItem("refreshToken", AuthenticationResult.RefreshToken || '');
       return AuthenticationResult;
     }
   } catch (error) {
