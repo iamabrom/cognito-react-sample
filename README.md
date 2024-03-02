@@ -2,7 +2,12 @@
 
 This is a sample react and TypeScript SPA application that can be used with Amazon Cognito. This entirely uses the AWS SDK for JavaScript v3.
 
+[Demo link](https://stackblitz.com/edit/cognito-react-sample?file=src%2Fconfig.json)
+
 Learn more about Amazon Cognito: https://aws.amazon.com/cognito/
+
+![Screenshot of sample app](https://raw.githubusercontent.com/iamabrom/cognito-react-sample/master/sample.png)
+
 
 ## Getting started
 1. [Create your user pool](https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-as-user-directory.html)
